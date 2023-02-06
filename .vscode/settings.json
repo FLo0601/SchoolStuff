@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "MySQL",
+            "name": "TestConnection",
+            "database": "eGameDarling",
+            "username": "testUser",
+            "password": "TestPW",
+            "connectString": "Server=localhost; Port=3306; Database=eGameDarling; Uid=testUser; Pwd=TestPW;",
+            "connectionTimeout": 10
+        }
+    ]
+}
