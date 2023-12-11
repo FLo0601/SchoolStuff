@@ -1,0 +1,21 @@
+<html>
+<head>
+	<script>
+	async function myFunction(){
+		let request = await fetch("http://127.0.0.1:3000");
+		console.log(request);
+		let testText = await request.json();
+		console.log(testText);
+		console.log("test 3");
+		document.getElementById("testDiv").innerHTML = testText;
+	}
+</script>
+</head>
+<body>
+	
+	<button onclick="myFunction();">Click Me</button>
+	<div id="testDiv">
+		test
+	</div>
+</body>
+</html>
