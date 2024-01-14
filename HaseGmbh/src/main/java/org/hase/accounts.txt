@@ -1,0 +1,10 @@
+john.doe,password123,john.doe@hasegmbh.de
+jane.smith,letmein,jane.smith@hasegmbh.de
+michael.johnson,securepass,michael.johnson@hasegmbh.de
+emily.williams,qwerty,emily.williams@hasegmbh.de
+daniel.brown,pass123,daniel.brown@hasegmbh.de
+sophia.davis,123456,sophia.davis@hasegmbh.de
+matthew.miller,password,matthew.miller@hasegmbh.de
+olivia.garcia,secret,olivia.garcia@hasegmbh.de
+liam.martinez,iloveyou,liam.martinez@hasegmbh.de
+emma.lopez,welcome,emma.lopez@hasegmbh.de
