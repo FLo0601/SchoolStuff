@@ -7,66 +7,38 @@ import org.hase.model.Account;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Authentication implements IAuthentication {
-    private static Authentication instance;
+public class AuthenticationMock implements IAuthentication {
+    private static AuthenticationMock instance;
     private ArrayList<Account> accountList;
 
-    private Authentication() {
+    private AuthenticationMock() {
         this.accountList = new ArrayList<>();
         readAccountsFromFile();
     }
 
-    public static Authentication getInstance() {
+    public static AuthenticationMock getInstance() {
         // Wenn die Instanz noch nicht erstellt wurde, erstelle sie
         if (instance == null) {
-            instance = new Authentication();
+            instance = new AuthenticationMock();
         }
         // Gib die Instanz zurück
         return instance;
     }
 
     public boolean addAccount(String username, String password, String email) {
-        Account newAccount = new Account(username, password, email);
-
-        if (accountList.contains(newAccount))
-            return false;
-
-        accountList.add(newAccount);
         return true;
     }
 
     public boolean authenticate(String username, String password) {
-        for (Account account : accountList) {
-            if (account.getUsername().equals(username) && account.getPassword().equals(password)) {
-                System.out.println("Login erfolgreich für Benutzer: " + username);
-                return true;
-            }
-        }
-        System.out.println("Fehlerhafte Anmeldeinformationen für Benutzer: " + username);
-        return false;
+        return true;
     }
 
     public boolean changePassword(String username, String password, String newPassword){
-        for (Account account : accountList) {
-            if (account.getUsername().equals(username) && account.getPassword().equals(password)) {
-                account.setPassword(newPassword);
-                System.out.println("The password has been successfully changed");
-                return true;
-            }
-        }
-        System.out.println("Error: The password change failed.");
-        return false;
+        return true;
     }
 
     public boolean resetPassword(String username){
-        for (Account account : accountList) {
-            if (account.getUsername().equals(username) ) {
-                System.out.println("A password reset email has been sent to " + account.getEmail() );
-                return true;
-            }
-        }
-        System.out.println("Error: The username " + username + " doesn't exist.");
-        return false;
+        return true;
     }
 
     private void readAccountsFromFile() {
@@ -100,7 +72,7 @@ public class Authentication implements IAuthentication {
 
     public static void main(String[] args) {
         // Beispiel für die Verwendung der Authentifizierungsklasse
-        Authentication authentication = Authentication.getInstance();
+        AuthenticationMock authentication = AuthenticationMock.getInstance();
 
         // Accounts hinzufügen
         authentication.addAccount("Benutzer1", "Passwort1", "Benutzer1@haseGmbH.de");
